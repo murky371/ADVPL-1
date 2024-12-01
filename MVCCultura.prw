@@ -6,13 +6,14 @@
 
 /*/{Protheus.doc} RCOMA006
 Rotina para gera Pre nota CT-e importados
-@author Leandro Rodrigues
+@author Joao Goncalves
 @since 21/01/2020
 @version P12
 @param nulo7
 @return nulo
 /*/
-User Function MVCCULTURA()      
+User Function MVCCULTURA()  
+    
 Local aArea     := GetArea()
 
 Local oBrw      
@@ -46,8 +47,8 @@ ADD OPTION aRotina TITLE 'Excluir'               ACTION 'VIEWDEF.MVCCULTURA'  OP
 Return aRotina
 
 /*/{Protheus.doc} ModelDef
-Função que cria o objeto model			
-@author Leandro Rodrigues
+FunÃ§Ã£o que cria o objeto model			
+@author Joao Goncalves
 @since 24/01/2020
 @version P12
 @param Nao recebe parametros            
@@ -62,7 +63,7 @@ Local oModel
 // Cria o objeto do Modelo de Dados
 oModel := MPFormModel():New('PMVCCULTURA',/*bPreValidacao*/,/*bPosValidacao*/,/*bCommit*/,/*bCancel*/ )
 	
-// Adiciona ao modelo uma estrutura de formulário de edicao por campo
+// Adiciona ao modelo uma estrutura de formulÃ¡rio de edicao por campo
 oModel:AddFields('ZB1MASTER', /*cOwner*/, oStruZB1, /*bPreValidacao*/, /*bPosValidacao*/, /*bCarga*/ )
 
 // Adiciona a chave primaria da tabela principal
@@ -70,20 +71,19 @@ oModel:SetPrimaryKey({ "ZB1_FILIAL", "ZB1_CODCUL"})
 // Adiciona a descricao do Modelo de Dados
 oModel:SetDescription( 'Cadastro de Cultura')
 	
-// Adiciona a descrição dos Componentes do Modelo de Dados
+// Adiciona a descriÃ§Ã£o dos Componentes do Modelo de Dados
 oModel:GetModel( 'ZB1MASTER' ):SetDescription( 'Cadastro de cultura' )
 	                                                          	
 Return oModel
 
 /*/{Protheus.doc} ModelDef
-Função que cria o objeto View			
-@author Leandro Rodrigues
+FunÃ§Ã£o que cria o objeto View			
+@author Joao Goncalves
 @since 12/12/2019
 @version P12
 @param Nao recebe parametros            
 @return nulo
 /*/
-
 Static Function ViewDef() 
 
 // Cria um objeto de Modelo de Dados baseado no ModelDef do fonte informado
@@ -96,7 +96,7 @@ Local oView
 // Cria o objeto de View
 oView := FWFormView():New()
 	
-// Define qual o Modelo de dados ser· utilizado
+// Define qual o Modelo de dados serÂ· utilizado
 oView:SetModel( oModel )
 	
 //Adiciona no nosso View um controle do tipo FormFields(antiga enchoice)
@@ -105,7 +105,7 @@ oView:AddField( 'VIEW_ZB1', oStruZB1, 'ZB1MASTER')
 //Cria Folder para organizar separacao de tela
 oView:CreateVerticalBox("PANEL_GERAL", 100)
 
-// Relaciona o identificador (ID) da View com o "box" para exibição
+// Relaciona o identificador (ID) da View com o "box" para exibiÃ§Ã£o
  oView:SetOwnerView('VIEW_ZB1'	,'PANEL_GERAL')
    
 // titulo dos componentes                      	 
@@ -117,3 +117,4 @@ oView:SetViewProperty( 'ZB1MASTER', 'SETLAYOUT', { FF_LAYOUT_VERT_DESCR_TOP , 3 
 oView:SetCloseOnOk({ || .T. })  //Fecha a Tela ao confirmar	 
 	
 Return oView
+
