@@ -7,10 +7,10 @@
 /*/{Protheus.doc} MVCULTURA
 Rotina para gera Pre nota CT-e importados
 @author Joao Goncalves
-@since 21/01/2020
-@version P12
-@param nulo7
-@return nulo
+@since 02/12/2024
+@version 
+@param 
+@return Sem retorno
 /*/
 User Function MVCCULTURA()  
     
@@ -49,10 +49,10 @@ Return aRotina
 /*/{Protheus.doc} ModelDef
 Função que cria o objeto model			
 @author Joao Goncalves
-@since 24/01/2020
-@version P12
+@since 02/12/2024
+@version 
 @param Nao recebe parametros            
-@return nulo
+@return oModel
 /*/
 Static Function ModelDef()
 
@@ -79,10 +79,10 @@ Return oModel
 /*/{Protheus.doc} ModelDef
 Função que cria o objeto View			
 @author Joao Goncalves
-@since 12/12/2019
-@version P12
+@since 02/12/2024
+@version 
 @param Nao recebe parametros            
-@return nulo
+@return oView
 /*/
 Static Function ViewDef() 
 
