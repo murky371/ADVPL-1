@@ -4,7 +4,7 @@
 #INCLUDE "TopConn.ch"
 #INCLUDE 'Protheus.ch'
 
-/*/{Protheus.doc} RCOMA006
+/*/{Protheus.doc} MVCULTURA
 Rotina para gera Pre nota CT-e importados
 @author Joao Goncalves
 @since 21/01/2020
